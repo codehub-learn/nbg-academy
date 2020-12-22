@@ -6,7 +6,7 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            var myVar = "Hello";
+            var myVar = "Hello again";
             Console.WriteLine(myVar);
         }
     }
