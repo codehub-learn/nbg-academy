@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp2", "app\ConsoleA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyCrm.Core", "src\TinyCrm.Core\TinyCrm.Core.csproj", "{65C4B6D6-4BEB-4EBC-A8CA-11D3D61EFBB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyCrm.Core.Tests", "tests\TinyCrm.Core.Tests\TinyCrm.Core.Tests.csproj", "{8BEC7709-E908-4D00-B95A-E4E259AC5D52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{65C4B6D6-4BEB-4EBC-A8CA-11D3D61EFBB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65C4B6D6-4BEB-4EBC-A8CA-11D3D61EFBB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65C4B6D6-4BEB-4EBC-A8CA-11D3D61EFBB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BEC7709-E908-4D00-B95A-E4E259AC5D52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BEC7709-E908-4D00-B95A-E4E259AC5D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BEC7709-E908-4D00-B95A-E4E259AC5D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BEC7709-E908-4D00-B95A-E4E259AC5D52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2C07307E-9A47-4C8D-A8C8-704DF8A59D82} = {8E69AC32-F85E-4E39-9708-D0E1AD1625C1}
 		{65C4B6D6-4BEB-4EBC-A8CA-11D3D61EFBB1} = {691A29BA-9E40-4E7F-B56A-C14A2E0FF6FC}
+		{8BEC7709-E908-4D00-B95A-E4E259AC5D52} = {05D5BA8F-DB57-496A-B431-51AF1B19544A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AFFD8054-D46C-4928-89ED-E9A252BCF52D}
