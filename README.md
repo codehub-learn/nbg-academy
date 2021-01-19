@@ -21,3 +21,10 @@
 3. [Patterns for Managing Source Code Branches (Martin Fowler)](https://martinfowler.com/articles/branching-patterns.html)
 4. [About Pull Requests (Github)](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
 5. [Connecting to Github with SSH (passwordless push/pulls)](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)
+
+## Tuesday 19 Jan. 2021
+
+1. [.NET configuration providers](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#configuration-providers)
+2. [Onion architecture (_relates to our project's structure_)](https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#clean-architecture)
+3. [Paging with EF Core](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page?view=aspnetcore-5.0#add-paging-to-students-index)
+4. [Querying with EF Core](https://docs.microsoft.com/en-us/ef/core/querying/)
