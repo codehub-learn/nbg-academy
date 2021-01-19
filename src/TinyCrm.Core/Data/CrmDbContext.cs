@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace ConsoleApp2
+using TinyCrm.Core.Model;
+
+namespace TinyCrm.Core.Data
 {
     public class CrmDbContext : DbContext
     {
@@ -15,7 +17,10 @@ namespace ConsoleApp2
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlServer(connectionString,
+                options => {
+                    options.MigrationsAssembly("ConsoleApp2");
+                });
         }
 
         protected override void OnModelCreating(
@@ -25,6 +30,13 @@ namespace ConsoleApp2
 
             modelBuilder.Entity<Customer>()
                 .ToTable("Customer");
+
+            modelBuilder.Entity<Customer>()
+                .HasIndex(c => c.VatNumber)
+                .IsUnique();
+
+            modelBuilder.Entity<Order>()
+                .ToTable("Order");
         }
     }
 }

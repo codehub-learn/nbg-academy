@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp2
+﻿namespace TinyCrm.Core.Model
 {
     public class Product
     {

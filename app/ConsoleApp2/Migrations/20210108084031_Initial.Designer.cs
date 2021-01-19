@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
+using TinyCrm.Core.Data;
+
 namespace ConsoleApp2.Migrations
 {
     [DbContext(typeof(CrmDbContext))]
