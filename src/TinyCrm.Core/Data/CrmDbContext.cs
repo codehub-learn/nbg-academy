@@ -6,22 +6,9 @@ namespace TinyCrm.Core.Data
 {
     public class CrmDbContext : DbContext
     {
-        const string connectionString =
-            "Server=localhost;Database=crmdb;User Id=sa;Password=admin!@#123;";
-
-        public CrmDbContext()
+        public CrmDbContext(
+            DbContextOptions<CrmDbContext> options) : base(options)
         { }
-
-        protected override void OnConfiguring(
-            DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-
-            optionsBuilder.UseSqlServer(connectionString,
-                options => {
-                    options.MigrationsAssembly("ConsoleApp2");
-                });
-        }
 
         protected override void OnModelCreating(
             ModelBuilder modelBuilder)
