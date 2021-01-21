@@ -28,3 +28,19 @@
 2. [Onion architecture (_relates to our project's structure_)](https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#clean-architecture)
 3. [Paging with EF Core](https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page?view=aspnetcore-5.0#add-paging-to-students-index)
 4. [Querying with EF Core](https://docs.microsoft.com/en-us/ef/core/querying/)
+
+
+## Thursday 21 Jan. 2021
+
+Related commit: https://github.com/codehub-learn/nbg-academy/pull/2/commits/5a3f113bd3cac3224dcab815801087b73fc2e2c3
+
+### DI (Dependency Injection)
+1. [Inversion of Control Containers and the Dependency Injection pattern](https://martinfowler.com/articles/injection.html)
+2. [Dependency injection in .NET](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection)
+3. [Service Lifetimes (Transient, scoped and singleton)](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#service-lifetimes)
+4. [Dependency injection guidelines](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection-guidelines)
+
+### Configuration
+1. [Configuration Providers in .NET](https://docs.microsoft.com/en-us/dotnet/core/extensions/configuration-providers)
+2. [Configuration Providers: Order of execution (ASP.NET Core specific)](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#default-configuration)
+
