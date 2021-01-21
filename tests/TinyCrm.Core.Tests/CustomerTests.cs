@@ -1,68 +1,47 @@
-using System;
 using System.Linq;
+
+using Microsoft.Extensions.DependencyInjection;
 
 using Xunit;
 
-using TinyCrm.Core.Data;
 using TinyCrm.Core.Model;
+using TinyCrm.Core.Services;
 
 namespace TinyCrm.Core.Tests
 {
-    public class CustomerTests
+    public class CustomerTests : IClassFixture<TinyCrmFixture>
     {
-        [Fact]
-        public void Add_Customer_Success()
+        private ICustomerService _customers;
+        private Data.CrmDbContext _dbContext;
+
+        public CustomerTests(TinyCrmFixture fixture)
         {
-            using var dbContext = new CrmDbContext();
-
-            var customer = new Customer()
-            {
-                Address = "Athens",
-                Name = "Dimitris",
-                Surname = "Pnevmatikos",
-                VatNumber = $"{Guid.NewGuid()}"
-            };
-
-            dbContext.Add(customer);
-            dbContext.SaveChanges();
-
-            var dbCustomer = dbContext.Set<Customer>()
-                .Where(c => c.CustomerId == customer.CustomerId)
-                .SingleOrDefault();
-
-            Assert.NotNull(dbCustomer);
-            Assert.Equal("Athens", dbCustomer.Address);
-            Assert.Equal(customer.VatNumber, dbCustomer.VatNumber);
+            _customers = fixture.Scope.ServiceProvider
+                .GetRequiredService<ICustomerService>();
+            _dbContext = fixture.Scope.ServiceProvider
+                .GetRequiredService<Data.CrmDbContext>();
         }
 
         [Fact]
-        public void Add_Customer_Duplicate_Vatnumber_Failure()
+        public void Add_Customer_Success()
         {
-            using var dbContext = new CrmDbContext();
-
-            var customer = new Customer()
-            {
-                Address = "Athens",
+            var options = new Services.Options.RegisterCustomerOptions() {
                 Name = "Dimitris",
                 Surname = "Pnevmatikos",
-                VatNumber = $"{Guid.NewGuid()}"
+                VatNumber = $"{System.Guid.NewGuid()}"
             };
 
-            dbContext.Add(customer);
-            dbContext.SaveChanges();
+            var customer = _customers.Register(options);
 
-            customer = new Customer()
-            {
-                Address = "new address",
-                Name = "Duplicate",
-                VatNumber = customer.VatNumber
-            };
+            Assert.NotNull(customer);
 
-            dbContext.Add(customer);
-            Assert.ThrowsAny<Exception>(
-                () => {
-                    dbContext.SaveChanges();
-                });
+            var savedCustomer = _dbContext.Set<Customer>()
+                .Where(c => c.CustomerId == customer.CustomerId)
+                .SingleOrDefault();
+            Assert.NotNull(savedCustomer);
+            Assert.Equal(options.Name, savedCustomer.Name);
+            Assert.Equal(options.Surname, savedCustomer.Surname);
+            Assert.Equal(options.VatNumber, savedCustomer.VatNumber);
         }
     }
 }

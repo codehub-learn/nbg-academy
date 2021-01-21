@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Linq;
 
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
-using TinyCrm.Core.Data;
-using TinyCrm.Core.Model;
+using TinyCrm.Core.Services.Extensions;
 
 namespace ConsoleApp2
 {
@@ -19,19 +17,8 @@ namespace ConsoleApp2
                 .AddJsonFile("appsettings.json", false)
                 .Build();
 
-            var connectionString = config.GetSection("Database").Value;
-
-            // DbContext config
-            var optionsBuilder = new DbContextOptionsBuilder<CrmDbContext>();
-            optionsBuilder.UseSqlServer(connectionString,
-                options => {
-                    options.MigrationsAssembly("ConsoleApp2");
-                });
-
-            using var dbContext = new CrmDbContext(optionsBuilder.Options);
-
-            var customers = dbContext.Set<Customer>()
-                .ToList();
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddAppServices(config);
         }
 
         //public static IQueryable<Customer> SearchCustomers(
