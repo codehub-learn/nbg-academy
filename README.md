@@ -44,3 +44,14 @@ Related commit: https://github.com/codehub-learn/nbg-academy/pull/2/commits/5a3f
 1. [Configuration Providers in .NET](https://docs.microsoft.com/en-us/dotnet/core/extensions/configuration-providers)
 2. [Configuration Providers: Order of execution (ASP.NET Core specific)](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0#default-configuration)
 
+## Tuesday 9 Feb. 2021
+
+Related commits: https://github.com/codehub-learn/nbg-academy/pull/3
+
+### ASPNET Core
+1. [Fundamentals](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/?view=aspnetcore-5.0&tabs=windows)
+2. [the Startup class](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-5.0)
+3. [Kestrel web server](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/?view=aspnetcore-5.0&tabs=windows#kestrel)
+4. [ASPNET configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-5.0)
+5. [Introduction to REST](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design#introduction-to-rest)
+6. [REST (wikipedia)](https://en.wikipedia.org/wiki/Representational_state_transfer)
