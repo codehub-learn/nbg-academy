@@ -1,4 +1,6 @@
-﻿using TinyCrm.Core.Data;
+﻿using System.Linq;
+
+using TinyCrm.Core.Data;
 using TinyCrm.Core.Model;
 using TinyCrm.Core.Services.Options;
 
@@ -11,6 +13,13 @@ namespace TinyCrm.Core.Services
         public CustomerService(CrmDbContext dbContext)
         {
             _dbContext = dbContext;
+        }
+
+        public Customer GetById(int customerId)
+        {
+            return _dbContext.Set<Customer>()
+                .Where(c => c.CustomerId == customerId)
+                .SingleOrDefault();
         }
 
         public Customer Register(RegisterCustomerOptions options)

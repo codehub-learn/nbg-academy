@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\TinyCrm.Core\TinyCrm.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -6,5 +6,6 @@ namespace TinyCrm.Core.Services
     public interface ICustomerService
     {
         public Customer Register(RegisterCustomerOptions options);
+        public Customer GetById(int customerId);
     }
 }
