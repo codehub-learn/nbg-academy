@@ -10,7 +10,6 @@ namespace TinyCrm.Core.Model
         public string VatNumber { get; set; }
         public decimal TotalGross { get; set; }
         public string Address { get; set; }
-
         public List<Order> Orders { get; set; }
 
         public Customer()

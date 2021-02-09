@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TinyCrm.Core.Tests": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

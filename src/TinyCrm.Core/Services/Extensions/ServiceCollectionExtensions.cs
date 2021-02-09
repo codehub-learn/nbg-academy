@@ -16,7 +16,8 @@ namespace TinyCrm.Core.Services.Extensions
             @this.AddSingleton<AppConfig>(
                 configuration.ReadAppConfiguration());
 
-           @this.AddDbContext<CrmDbContext>(
+            // AddScoped
+            @this.AddDbContext<CrmDbContext>(
                 (serviceProvider, optionsBuilder) => {
                     var appConfig = serviceProvider.GetRequiredService<AppConfig>();
 

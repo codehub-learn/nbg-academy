@@ -6,7 +6,6 @@ namespace TinyCrm.Core.Services
 {
     public class CustomerService : ICustomerService
     {
-        // ToDo->ReadOnly
         private CrmDbContext _dbContext;
 
         public CustomerService(CrmDbContext dbContext)
@@ -14,8 +13,6 @@ namespace TinyCrm.Core.Services
             _dbContext = dbContext;
         }
 
-        // Note: Initial implemementation. Will be modified
-        // to return a more structured and informative type.
         public Customer Register(RegisterCustomerOptions options)
         {
             if (string.IsNullOrWhiteSpace(options?.VatNumber)) {

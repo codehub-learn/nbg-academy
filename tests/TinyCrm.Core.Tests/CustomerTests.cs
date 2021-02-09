@@ -23,7 +23,7 @@ namespace TinyCrm.Core.Tests
         }
 
         [Fact]
-        public void Add_Customer_Success()
+        public Customer Add_Customer_Success()
         {
             var options = new Services.Options.RegisterCustomerOptions() {
                 Name = "Dimitris",
@@ -42,6 +42,17 @@ namespace TinyCrm.Core.Tests
             Assert.Equal(options.Name, savedCustomer.Name);
             Assert.Equal(options.Surname, savedCustomer.Surname);
             Assert.Equal(options.VatNumber, savedCustomer.VatNumber);
+
+            return customer;
+        }
+
+        [Fact]
+        public void Delete_Customer_Success()
+        {
+            var customer = Add_Customer_Success();
+
+            _dbContext.Remove(customer);
+            _dbContext.SaveChanges();
         }
     }
 }
