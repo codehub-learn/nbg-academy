@@ -12,7 +12,7 @@
     "TinyCrm.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchUrl": "customers",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -24,7 +24,8 @@
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/weatherforecast",
       "publishAllPorts": true,
-      "useSSL": true
+      "useSSL": true,
+      "sslPort": 5004
     }
   }
 }

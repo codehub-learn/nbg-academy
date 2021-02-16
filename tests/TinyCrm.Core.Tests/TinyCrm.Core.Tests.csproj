@@ -8,11 +8,15 @@
 
   <ItemGroup>
     <None Remove="appsettings.json" />
+    <None Remove="Files\Book1.xlsx" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Book1.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

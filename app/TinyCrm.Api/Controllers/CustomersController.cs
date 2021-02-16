@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using TinyCrm.Core.Constants;
 using TinyCrm.Core.Model;
 using TinyCrm.Core.Services;
 using TinyCrm.Core.Services.Options;
@@ -28,20 +29,24 @@ namespace TinyCrm.Api.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var customer = _customers.GetById(id);
+            var customer = await _customers.GetByIdAsync(id);
 
             return Json(customer);
         }
 
         [HttpPost]
-        public IActionResult Register(
+        public async Task<IActionResult> Register(
             [FromBody] RegisterCustomerOptions options)
         {
-            var customer = _customers.Register(options);
+            var result = await _customers.RegisterAsync(options);
 
-            return Json(customer);
+            if (result.Code != ResultCode.Success) {
+                return StatusCode(result.Code, result.ErrorMessage);
+            }
+
+            return Json(result);
         }
     }
 }
